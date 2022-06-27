@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/Doccure-main
 .env
 .env.backup
 .phpunit.result.cache

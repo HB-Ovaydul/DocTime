@@ -1,18 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\doctime\docHomecontroller;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/**
+ * Home Route
+ */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ docHomecontroller::class, 'HomePage' ]) -> name('home.page');
+Route::get('/login', [ docHomecontroller::class, 'LoginPage' ]) -> name('login.page');
+
+/**
+ * Doctor pages
+ */
+
+ Route::get('/doctor-register', [ docHomecontroller::class, 'DoctorRegisterPage' ]) -> name('doctor.reg.page');
+
+ Route::get('/doctor-deshboard', [ docHomecontroller::class, 'DoctorDeshPage' ]) -> name('doctor.desh.page');
+
+/**
+ * Patient pages
+ */
+
+ Route::get('/patient-register', [ docHomecontroller::class, 'PatientRegisterPage' ]) -> name('patient.reg.page');
+
+ Route::get('/patient-deshboard', [ docHomecontroller::class, 'PatientDeshPage' ]) -> name('patient.desh.page');
