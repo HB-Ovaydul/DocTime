@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\PatientController;
 use App\Http\Controllers\doctime\docHomecontroller;
 
 /**
@@ -25,3 +26,7 @@ Route::get('/login', [ docHomecontroller::class, 'LoginPage' ]) -> name('login.p
  Route::get('/patient-register', [ docHomecontroller::class, 'PatientRegisterPage' ]) -> name('patient.reg.page');
 
  Route::get('/patient-deshboard', [ docHomecontroller::class, 'PatientDeshPage' ]) -> name('patient.desh.page');
+
+ Route::post('/patient-register', [ PatientController::class, 'register' ]) -> name('patient.ragister.page');
+
+ Route::post('/patient-login', [ PatientController::class, 'Login' ]) -> name('patient.login');

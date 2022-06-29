@@ -34,14 +34,18 @@ return [
     | Supported: "session"
     |
     */
-
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
+    
+        'guards' => [
+            'web' => [
+                'driver' => 'session',
+                'provider' => 'users',
+            ],
+            'patient' => [
+                'driver' => 'session',
+                'provider' => 'patients',
+            ],
         ],
-    ],
-
+    
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -63,6 +67,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'patients' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\patient::class,
         ],
 
         // 'users' => [
